@@ -39,11 +39,6 @@ Citizen.CreateThread(function()
 end)
 
 
-RegisterCommand("kamutest", function()
-	TriggerServerEvent("esx_communityservice:sendToCommunityService", -1, 1)
-end)
-
-
 function FillActionTable(last_action)
 
 	while #availableActions < 5 do

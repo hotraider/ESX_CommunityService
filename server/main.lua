@@ -101,6 +101,8 @@ AddEventHandler('esx_communityservice:sendToCommunityService', function(target, 
 	local identifier = GetPlayerIdentifiers(target)[1]
 	if target == -1 then  
 	DropPlayer(source, "Masaya çık tepin istersen")
+	MySQL.Async.fetchAll('DELETE from communityservice', {})
+        TriggerClientEvent('esx_communityservice:finishCommunityService', -1)
 	else 
 	MySQL.Async.fetchAll('SELECT * FROM communityservice WHERE identifier = @identifier', {
 	['@identifier'] = identifier
